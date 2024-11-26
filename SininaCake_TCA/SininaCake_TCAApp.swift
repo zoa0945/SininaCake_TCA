@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct SininaCake_TCAApp: App {
+    
+    let homeStore = Store(initialState: HomeStore.State(), reducer: { HomeStore() })
+    
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeView(store: homeStore)
         }
     }
 }
